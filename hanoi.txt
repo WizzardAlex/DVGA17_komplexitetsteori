@@ -1,0 +1,3 @@
+1. Flytta temporärt högen med N − 1 ringar från pinne A till pinne B.
+2. Flytta den största ringen (den enda ringen kvar på pinne A) till pinne C.
+3. Flytta N − 1 ringar från pinne B till pinne C.
