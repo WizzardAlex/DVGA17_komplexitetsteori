@@ -1,0 +1,7 @@
+\babel@toc {swedish}{}
+\contentsline {section}{\numberline {1}Inledning}{2}% 
+\contentsline {subsection}{\numberline {1.1}Antaganden}{2}% 
+\contentsline {section}{\numberline {2}Del 2: Tornen i Hanoi}{2}% 
+\contentsline {paragraph}{Inledning}{2}% 
+\contentsline {paragraph}{Omskrivning}{2}% 
+\contentsline {section}{\numberline {3}Sammanfattning}{3}% 

@@ -1,0 +1,59 @@
+\section{Del 2: Tornen i Hanoi}
+\paragraph{Inledning}    
+Vi har tre pinnar med givna respektive namn A, B, C, samt notationen N för antal ringar.
+\newline
+Regler:
+\begin{enumerate}
+\item Flytta en ring åt gången.
+\item Lägg aldrig en större ring ovanpå en mindre.
+\end{enumerate}
+
+\newline
+Given rekursiv algoritm:
+\begin{enumerate}
+	\item Flytta temporärt högen med N − 1 ringar från pinne A till pinne B.
+	\item Flytta den största ringen (den enda ringen kvar på pinne A) till pinne C.
+	\item Flytta N − 1 ringar från pinne B till pinne C.
+\end{enumerate}
+
+\paragraph{Omskrivning}
+
+görs för att komma fram till en tidskomplexitet av den rekursiva algoritmen till
+en rekursiv psudokod/funktion. Som kan beskrivas, funktionen H(antal ringar, som flyttas från
+pinne x, till pinne y)
+
+\textbf{Tidsfunktion} 
+\vspace{5mm} 
+\\ H( N, A, C) 
+\\	H( N - 1, A, B)	\hspace{1cm}    // kallar på sig självt
+\\	flytt(A,C)     	 \hspace{1cm}   // flyttar ringen ett steg	
+\\	H( N - 1, B, C)	 \hspace{1cm}   // kallar på sig självt 
+\vspace{5mm}
+\\ Med tiden i åtanke kan flytt(A,C) ses som en konstant ökning i tidskomplexiteten.
+\newline Därav kan ovan skrivas om till tidsfunktionen 
+\begin{align*}
+
+$$
+    T(N) &= T(N-1) + 1 + T(N-1) \\ 
+         &= 2T(N-1) + 1 
+$$
+\end{align*}
+\newline
+Med hjälp av inducering fås.
+\begin{align*}
+  $$  
+    T(N) &= 2[2T(N-1-1)+1] + 1	  \\  &= 2^2 T(N-2) + 3
+\\	&= 2^2[2T(N-3)+1] + 3	  \\  &= 2^3 T(N-3) + 7 
+    $$
+\end{align*}
+Då k är antal induceringar för funktionen $ T(N) = 2^k T(N-k) + 2^k - 1 $
+\\ När $ k \rightarrow N$ så fås tidsfunktionen 
+\begin{align*}
+  $$   T(N) &= 2^N T(N-N) + 2^N - 1 \\
+    &= 2^N T(0) + 2^N -1 \\
+    &= 0 + 2^N - 1 = 2^N - 1 
+  $$ 
+\end{align*}
+\vspace{5mm}
+Detta ger Tornen i Hanoi tidskomplexiteten $\mathcal{O}(2^n)$ då konstanten kan bortses.
+
