@@ -1,0 +1,14 @@
+\paragraph{}
+Systemanropet \emph{fork}() kallas i en föräldraprocess och skapar en s.k barnprocess. Barnprocessen är identisk till sin föräldreprocess och kopierar dess data och kod, med skillnaden att barnprocessen har en annan identifieringsmarkör (PID). Efter systemnropet återgår både föräldre- och barnprocessen till samma plats i koden och exekverar. 
+Ofta följer systemanropet \emph{exec}() efter. Systemanropet \emph{exec}() laddar in ett nytt program över det gamla när det kallas. 
+\subsection{Processegenskaper}
+\subparagraph{}
+\emph{systemctl} är ett centralt kommando som används för att styra systemd och manipulera processer av daemontypen i Linux. Användningsområden kan vara såsom att kolla statusen på en daemon, starta om en, skapa nya daemonprocesser eller att deaktivera en daemon.\cite{man}
+\begin{thebibliography}{999}
+
+    \bibitem{man}
+            bash-kommando 'man systemctl',
+                        \emph{Systemctl},
+                                        Linux man,
+                                                            2019-09-20,
+                                                            \end{thebibliography}
