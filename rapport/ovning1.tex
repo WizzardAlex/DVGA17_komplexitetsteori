@@ -1,0 +1,22 @@
+\section{Del 1: Turingmaskin}
+\paragraph{Inledning}    
+Uppgiften går ut på att skapa och analyzera en turingmaskin som efter antal a:n i input lägger till inversen av en sträng med 0:or och 1:or till höger, startandes med 0 vilket ger 0 -> 01 -> 0110 osv.
+
+\paragraph{Beskrivning av maskinen}
+1. gå höger tills \textslash, ersätt \textslash med 0 
+    1.1 gå vänster tills \textslash, gå 3
+
+2. gå vänster tills \textslash
+3. gå ett steg höger, om ej a, avsluta 
+4. om a, ersätt a med \textslash 
+    4.1 gå höger tills 0 eller 1, om \textslash gå 4.2 
+        4.1.1a om 1, ersätt med y   
+           4.1.1a.1 gå höger tills \textslash, ersätt med x, gå 4.1.2  
+        4.1.1b om 0, ersätt med x 
+        4.1.1b.1 gå höger tills \textslash, ersätt med y, gå 4.1.2 
+
+        4.1.2 gå vänster tills \textslash eller a, gå 4.1  
+    
+    4.2 gå vänster tills \textslash eller a, ersätt x med 0 och y med 1 på vägen 
+    4.3 gå 2
+
