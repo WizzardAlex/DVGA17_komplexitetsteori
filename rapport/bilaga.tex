@@ -1,0 +1,85 @@
+\section{Bilagor}
+\subsection{Turingmaskin}
+Tillståndsövergångar för turingmaskin
+\begin{verbatim}
+; This example program checks if the input string is a binary palindrome.
+; Input: a string of 0's and 1's, eg '1001001'
+
+
+; Machine starts in state 0.
+
+; State 0: sätt 0 först
+0 0 * r 0
+0 1 * r 0
+0 a * r 0
+0 _ 0 l q1
+
+; kolla om a
+; gå vänster till _, sedan höger
+q1 0 * l q1
+q1 1 * l q1
+q1 a * l q1
+q1 _ * r q2 ; längst ut, '_' funnet
+
+; leta upp nytt a
+q2 a _ r q3 ; nytt a, invertera
+q2 0 * * halt ; slut på a:n 
+q2 1 * * halt
+q2 _ * l halt
+
+
+;    om a, invertera
+; q4, 0:a funnen, sätter y (1) i slutet
+; q5, 1:a funnen, sätter x (0) i slutet
+; q6, kolla om 0, 1, repetera annars
+
+
+; leta upp karaktär att invertera
+q3 x * r q3
+q3 y * r q3
+q3 a * r q3
+q3 0 x r q4 ; finn siffra att invertera 
+q3 1 y r q5 ; finn siffra att invertera 
+
+
+
+; sätt y i slutet
+q4 x * r q4 
+q4 y * r q4 
+q4 0 * r q4 
+q4 1 * r q4 
+q4 a * r q4 
+q4 _ y l q6 
+
+; sätt x i slutet
+q5 x * r q5 
+q5 y * r q5 
+q5 0 * r q5 
+q5 1 * r q5 
+q5 a * r q5 
+q5 _ x l q6 
+
+; gå till '_' eller a
+q6 a * r q7 ; början funnen
+q6 _ * r q7 ; början funnen
+q6 x * l q6 
+q6 y * l q6 
+q6 0 * l q6 
+q6 1 * l q6
+
+; kolla om 0, 1 finns
+q7 _ * l q8 ; inga kvar, omvandla
+q7 x * r q7 
+q7 y * r q7 
+q7 0 * l q3 
+q7 1 * l q3
+
+; omvandla baklänges
+q8 x 0 l q8 
+q8 y 1 l q8 
+q8 0 * l q8 
+q8 1 * l q8
+
+q8 a * l q1
+q8 _ * r halt
+\end{verbatim}
