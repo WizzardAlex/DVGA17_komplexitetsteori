@@ -3,8 +3,9 @@
 \contentsline {subsection}{\numberline {1.1}Antaganden}{2}
 \contentsline {section}{\numberline {2}Del 1: Turingmaskin}{2}
 \contentsline {paragraph}{Inledning}{2}
-\contentsline {paragraph}{Beskrivning av maskinen}{2}
-\contentsline {section}{\numberline {3}Del 2: Tornen i Hanoi}{2}
-\contentsline {paragraph}{Inledning}{2}
-\contentsline {paragraph}{Omskrivning}{3}
-\contentsline {section}{\numberline {4}Sammanfattning}{3}
+\contentsline {paragraph}{Beskrivning av turingmaskinen}{2}
+\contentsline {paragraph}{Tidskomplexitet av algoritm}{2}
+\contentsline {section}{\numberline {3}Del 2: Tornen i Hanoi}{4}
+\contentsline {paragraph}{Inledning}{4}
+\contentsline {paragraph}{Omskrivning}{4}
+\contentsline {section}{\numberline {4}Sammanfattning}{5}
